@@ -83,12 +83,20 @@
 
     <!-- Модальное окно с видео -->
     <div class="video-modal" id="videoModal">
-        <div class="video-box">
-            <button class="close-btn" id="closeVideoBtn">✕</button>
-            <video id="myVideo" controls style="width:100%; border-radius:40px 12px 40px 12px; border:2px solid #ffb347; background:#000;">
+    <div class="video-box">
+        <button class="close-btn" id="closeVideoBtn">✕</button>
+        
+        <video id="myVideo" controls style="width:100%; border-radius:40px 12px 40px 12px; border:2px solid #ffb347; background:#000;">
             <source src="video/bro2.mp4" type="video/mp4">
             Твой браузер не поддерживает видео
         </video>
+        
+        <!-- Кнопка для запуска видео -->
+        <div style="text-align:center; margin-top:15px;">
+            <button id="playVideoBtn" style="padding:12px 40px; background:linear-gradient(135deg,#ff6b9d,#ee5a24); color:white; border:none; border-radius:50px; font-size:1.2rem; font-weight:700; cursor:pointer; box-shadow:0 5px 20px rgba(255,80,80,0.4); transition:0.3s;">
+                ▶️ Запустить видео
+            </button>
+        </div>
             <div class="video-caption">
                 ❤️ С любовью для тебя, братишка! ❤️
             </div>
