@@ -375,70 +375,98 @@
 
         /* Адаптив */
         @media (max-width: 600px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* ровно 2 колонки */
-        gap: 15px;
-        justify-content: center;
-        margin: 30px 0 25px;
+    /* 1. ЗАГОЛОВОК "С днём рождения, брат!" */
+    h1 {
+        font-size: 2.2rem !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2 !important;
     }
-
-    .photo-card {
-        flex: unset; /* убираем flex, используем grid */
-        max-width: 100%;
-        min-width: unset;
-        width: 100%;
-        padding: 10px 10px 14px;
-        border-radius: 30px 15px 30px 15px;
-        transform: rotate(0deg); /* убираем наклон на телефонах */
+    
+    /* 2. БЕЙДЖ "15 ЛЕТ" */
+    .birthday-badge {
+        font-size: 1.3rem !important;
+        padding: 8px 18px !important;
+        transform: rotate(0deg) !important;
     }
-
-    .photo-card:hover {
-        transform: scale(1.02) translateY(-5px);
+    
+    /* 3. ПОДЗАГОЛОВОК "ТЫ — НАША СУПЕРЗВЕЗДА" */
+    .subtitle {
+        font-size: 0.9rem !important;
+        padding: 5px 14px !important;
+        border-width: 1px !important;
     }
-
-    .photo-card img {
-        border-radius: 25px 10px 25px 10px;
+    
+    /* 4. ТЕКСТ ПОЗДРАВЛЕНИЯ */
+    .message-box p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
     }
-
+    
+    .message-box .highlight {
+        font-size: 1.3rem !important;
+    }
+    
+    /* 5. КНОПКИ */
+    .btn {
+        font-size: 0.95rem !important;
+        padding: 10px 20px !important;
+        box-shadow: 0 6px 0 #7a4d1a !important;
+    }
+    
+    .btn-video {
+        box-shadow: 0 6px 0 #7a3a4a !important;
+    }
+    
+    /* 6. ПОДПИСЬ ПОД ФОТО */
     .photo-card .caption {
-        font-size: 0.85rem;
-        padding: 4px 0;
+        font-size: 0.75rem !important;
     }
-
+    
     .photo-card .caption small {
-        font-size: 0.65rem;
+        font-size: 0.55rem !important;
+    }
+    
+    /* 7. ФУТЕР */
+    .footer {
+        font-size: 0.85rem !important;
+    }
+    
+    /* 8. ВИДЕО-ПОДПИСЬ */
+    .video-caption {
+        font-size: 1.0rem !important;
     }
 }
 
-/* Очень маленькие экраны (до 400px) */
-@media (max-width: 480px) {
-    .gallery {
-        gap: 10px;
+/* ===== ДЛЯ САМЫХ МАЛЕНЬКИХ ТЕЛЕФОНОВ (ДО 400px) ===== */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8rem !important;
     }
-
-    .photo-card {
-        padding: 8px 8px 12px;
-        border-radius: 25px 12px 25px 12px;
+    
+    .birthday-badge {
+        font-size: 1.1rem !important;
+        padding: 6px 14px !important;
     }
-
+    
+    .subtitle {
+        font-size: 0.75rem !important;
+        padding: 4px 10px !important;
+    }
+    
+    .message-box p {
+        font-size: 0.85rem !important;
+    }
+    
+    .message-box .highlight {
+        font-size: 1.1rem !important;
+    }
+    
+    .btn {
+        font-size: 0.85rem !important;
+        padding: 8px 16px !important;
+    }
+    
     .photo-card .caption {
-        font-size: 0.75rem;
-    }
-}
-
-/* Планшеты и большие телефоны */
-@media (min-width: 701px) and (max-width: 1024px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 колонки на планшетах */
-        gap: 18px;
-    }
-
-    .photo-card {
-        flex: unset;
-        max-width: 100%;
-        min-width: unset;
-        width: 100%;
+        font-size: 0.65rem !important;
     }
 }
