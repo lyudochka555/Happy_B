@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С днём рождения, братишка! 🎂</title>
+    <!-- Подключаем шрифт для весёлого настроения -->
+     <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <!-- Шапка с ровными надписями -->
+        <div class="header">
+            <div class="birthday-badge">
+                🎂 15 ЛЕТ 🎂
+            </div>
+            <h1>С днём рождения!</h1>
+            <div class="subtitle">
+                <span>✨ Ты — самый лучший ✨</span>
+            </div>
+        </div>
+
+        <!-- ГАЛЕРЕЯ: наши фото + маленькие -->
+        <div class="gallery">
+            <div class="photo-card">
+                <img src="img/1.jpg" alt="Брат и я" loading="lazy">
+                <div class="caption">Мы с тобой 🤘<small>2025</small></div>
+            </div>
+
+            <div class="photo-card baby-card">
+                <img src="img/3.jpg" alt="" loading="lazy">
+                <div class="caption"> Лысый чтоль 😂 <small>ну прикольно</small></div>
+            </div>
+            <div class="photo-card">
+                <img src="img/4.jpg"alt="" loading="lazy">
+                <div class="caption">Малыш 👶<small>милашка просто</small></div>
+            </div>
+            <div class="photo-card baby-card">
+                <img src="img/1.png" alt="Брат" loading="lazy">
+                <div class="caption">Такие маленькие ❤️<small>2020</small></div>
+            </div>
+            <div class="photo-card">
+                <img src="img/5.jpg" alt="Семья" loading="lazy">
+                <div class="caption">Просто красавчики 😍<small>ну крутые</small></div>
+            </div>
+            <div class="photo-card">
+                <img src="img/6.jpg" alt="Семья" loading="lazy">
+                <div class="caption">Какой серьёзный 😎<small>утютю</small></div>
+            </div>
+            <div class="photo-card">
+                <img src="img/7.jpg" alt="Семья" loading="lazy">
+                <div class="caption">Ай лев 🔥<small>мамина радость, папина гордость</small></div>
+            </div>
+            <div class="photo-card">
+                <img src="img/8.jpg" alt="Семья" loading="lazy">
+                <div class="caption">Ну мы ❤️<small>милахи просто</small></div>
+            </div>
+           
+        </div>
+
+        <!-- Поздравление + кнопка видео -->
+        <div class="message-box">
+            <p>
+                🥳 <span class="highlight">15</span> — это уже почти взрослый! <br>
+                Ты — самый крутой, талантливый и красивый.<br>
+                Пусть все мечты сбываются, а каждый день будет ярким, как эти фотки, успехов в каждом деле тебе!
+                 Пусть Бог тебя благословит, следуй за Ним всегда!Будь самым самым крутым, чтоб родители всегда радовались, глядя на тебя!✨
+            </p>
+            <div class="btn-group">
+                <button class="btn btn-video" id="videoBtn">
+                    <i>🎬</i> Смотреть прикольное видео
+                </button>
+                <button class="btn" id="fireBtn">🎆 Зажги салют</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>🎁</span>  15 лет — только начало!  <span>🎁</span>
+            <br><small style="opacity:0.7; font-weight:400;">с любовью от твоей сестры</small>
+        </div>
+    </div>
+
+    <!-- Модальное окно с видео -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-box">
+            <button class="close-btn" id="closeVideoBtn">✕</button>
+            <iframe src="https://vk.ru/video_ext.php?oid=535585162&id=456239747&autoplay=1" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">
+                ❤️ С любовью для тебя, братишка! ❤️
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const videoBtn = document.getElementById('videoBtn');
+            const modal = document.getElementById('videoModal');
+            const closeBtn = document.getElementById('closeVideoBtn');
+            const fireBtn = document.getElementById('fireBtn');
+            const messageBox = document.querySelector('.message-box p');
+
+            // Открыть видео
+            function openVideo() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                // авто-запуск iframe (перезагружаем src, чтобы включился автоплей)
+                const iframe = modal.querySelector('iframe');
+                const src = iframe.src;
+                iframe.src = src; // перезагрузка
+            }
+
+            function closeVideo() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                // останавливаем видео
+                const iframe = modal.querySelector('iframe');
+                iframe.src = iframe.src; 
+            }
+
+            videoBtn.addEventListener('click', openVideo);
+            closeBtn.addEventListener('click', closeVideo);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeVideo();
+            });
+
+            // Салют (яркая вспышка + текст)
+            fireBtn.addEventListener('click', function() {
+                const card = document.querySelector('.card');
+                card.style.transition = '0.2s';
+                card.style.boxShadow = '0 0 80px #ffb347, 0 0 150px #ff7e5f, 0 0 200px #ffd966';
+                setTimeout(() => {
+                    card.style.boxShadow = '0 40px 70px rgba(0, 0, 0, 0.9), 0 0 0 2px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 200, 0, 0.15)';
+                }, 350);
+
+                const original = messageBox.innerHTML;
+                messageBox.innerHTML = `🎇🎆🎇 <span style="color:#ffd966; font-size:2.4rem; display:inline-block;">БА-БАХ!</span> Салют в честь 15-летия! 🎇🎆🎇 <br> <span style="font-size:0.9rem; opacity:0.9;">ты круче любого фейерверка!</span>`;
+                setTimeout(() => {
+                    messageBox.innerHTML = original;
+                }, 2800);
+            });
+
+            // Закрытие по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeVideo();
+                }
+            });
+
+            // При загрузке добавим искру
+            setTimeout(() => {
+                const sub = document.querySelector('.subtitle span');
+                if (sub) {
+                    sub.style.transition = '0.3s';
+                    sub.style.transform = 'scale(1.15)';
+                    setTimeout(() => { sub.style.transform = 'scale(1)'; }, 400);
+                }
+            }, 400);
+        })();
+    </script>
+</body>
+</html>
