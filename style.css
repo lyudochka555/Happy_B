@@ -375,16 +375,37 @@
 
         /* Адаптив */
          @media (max-width: 700px) {
-            
-            .card { padding: 20px 15px 30px; border-radius: 40px; }
-            h1 { font-size: 3.2rem; }
-            .birthday-badge { font-size: 1.6rem; padding: 10px 24px; }
-            .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+    .card { 
+        padding: 20px 15px 30px; 
+        border-radius: 40px; 
+    }
+    
+    h1 { 
+        font-size: 2.2rem; 
+    }
+    
+    .birthday-badge { 
+        font-size: 1.3rem; 
+        padding: 8px 20px; 
+    }
+    
+    .subtitle { 
+        font-size: 0.9rem; 
+        padding: 5px 16px; 
+    }
+    
+    /* ГЛАВНОЕ: ГАЛЕРЕЯ - 2 КОЛОНКИ */
+    .gallery {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
     }
     
     .photo-card {
+        flex: unset !important;
+        max-width: 100% !important;
+        min-width: unset !important;
+        width: 100% !important;
         padding: 8px;
         border-radius: 25px 12px 25px 12px;
         border-bottom-width: 4px;
@@ -401,15 +422,84 @@
     .photo-card .caption small {
         font-size: 0.55rem;
     }
-            .photo-card { flex: 1 1 140px; max-width: 160px; }
-            .message-box p { font-size: 1.1rem; }
-            .btn { font-size: 1.05rem; padding: 14px 20px; }
-            .video-box { padding: 15px; }
-            .video-box .close-btn { width: 45px; height: 45px; font-size: 1.6rem; top: -12px; right: -12px; }
-        }
+    
+    .message-box p { 
+        font-size: 0.95rem; 
+    }
+    
+    .message-box .highlight {
+        font-size: 1.3rem;
+    }
+    
+    .btn { 
+        font-size: 0.9rem; 
+        padding: 10px 18px; 
+        box-shadow: 0 6px 0 #7a4d1a;
+    }
+    
+    .video-box { 
+        padding: 15px; 
+    }
+    
+    .video-box .close-btn { 
+        width: 40px; 
+        height: 40px; 
+        font-size: 1.4rem; 
+        top: -12px; 
+        right: -12px; 
+    }
+    
+    .footer {
+        font-size: 0.8rem;
+        padding-top: 15px;
+    }
+}
 
-        @media (max-width: 480px) {
-            .photo-card { flex: 1 1 110px; max-width: 130px; padding: 8px 8px 14px; }
-            .subtitle { font-size: 1.0rem; padding: 6px 18px; }
-            .btn-group { flex-direction: column; align-items: stretch; }
-        }
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ ===== */
+@media (max-width: 480px) {
+    .gallery {
+        gap: 8px !important;
+    }
+    
+    .photo-card {
+        padding: 6px;
+        border-radius: 20px 10px 20px 10px;
+    }
+    
+    .photo-card .caption {
+        font-size: 0.65rem;
+    }
+    
+    .photo-card .caption small {
+        font-size: 0.5rem;
+    }
+    
+    h1 { 
+        font-size: 1.8rem; 
+    }
+    
+    .birthday-badge { 
+        font-size: 1.1rem; 
+        padding: 6px 14px; 
+    }
+    
+    .subtitle { 
+        font-size: 0.75rem; 
+        padding: 4px 12px; 
+    }
+    
+    .message-box p { 
+        font-size: 0.85rem; 
+    }
+    
+    .btn { 
+        font-size: 0.8rem; 
+        padding: 8px 14px; 
+    }
+    
+    .btn-group { 
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 10px;
+    }
+}
